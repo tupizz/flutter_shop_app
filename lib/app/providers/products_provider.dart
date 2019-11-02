@@ -41,6 +41,8 @@ class ProductsProvider with ChangeNotifier {
   // retorno uma cópia dos elementos, não o ponteiro do vetor
   List<Product> get items => [..._items];
 
+  Product findById(String id) => _items.firstWhere((item) => item.id == id);
+
   void addProduct(Product item) {
     // _items.add(item);
     notifyListeners();
