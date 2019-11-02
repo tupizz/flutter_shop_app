@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import './../../models/product.dart';
 import './../../pages/product-detail/product_detail_page.dart';
+import './../../providers/products_provider.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -29,14 +31,19 @@ class ProductItem extends StatelessWidget {
           leading: IconButton(
             icon: Icon(
               Icons.favorite,
-              size: 15,
+              size: 20,
+              color: product.isFavorite
+                  ? Theme.of(context).primaryColor
+                  : Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ProductsProvider>(context).toggleFavorite(product.id);
+            },
           ),
           trailing: IconButton(
             icon: Icon(
               Icons.shopping_cart,
-              size: 15,
+              size: 20,
             ),
             onPressed: () {},
           ),

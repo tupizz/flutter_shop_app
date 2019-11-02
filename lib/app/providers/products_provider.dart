@@ -39,9 +39,21 @@ class ProductsProvider with ChangeNotifier {
   ];
 
   // retorno uma cópia dos elementos, não o ponteiro do vetor
-  List<Product> get items => [..._items];
+  List<Product> get items {
+    var items = [..._items];
+    var favoritedItems = items.where((item) => item.isFavorite);
+    var notFavoritedItems = items.where((item) => !item.isFavorite);
+
+    return [...favoritedItems, ...notFavoritedItems];
+  }
 
   Product findById(String id) => _items.firstWhere((item) => item.id == id);
+
+  void toggleFavorite(String id) {
+    var product = _items.firstWhere((item) => item.id == id);
+    product.isFavorite = !product.isFavorite;
+    notifyListeners();
+  }
 
   void addProduct(Product item) {
     // _items.add(item);
