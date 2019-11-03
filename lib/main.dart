@@ -5,14 +5,22 @@ import './app/pages/products-overview/products_overview_page.dart';
 import './app/pages/product-detail/product_detail_page.dart';
 import './app/shared/utils/color_utils.dart';
 import './app/providers/products_provider.dart';
+import './app/providers/cart_provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: ProductsProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: ProductsProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: CartProvider(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

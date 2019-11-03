@@ -6,7 +6,7 @@ import './../../../providers/products_provider.dart';
 import './../../../shared/widgets/product_item.dart';
 
 class ProductsGrid extends StatelessWidget {
-  bool showOnlyFavorites;
+  final bool showOnlyFavorites;
 
   ProductsGrid(this.showOnlyFavorites);
 
