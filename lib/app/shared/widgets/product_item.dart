@@ -50,7 +50,12 @@ class ProductItem extends StatelessWidget {
                 size: 20,
               ),
               onPressed: () {
-                cartProvider.addItem(product.id, product.price, product.title);
+                cartProvider.addItem(
+                  product.id,
+                  product.price,
+                  product.title,
+                  product.imageUrl,
+                );
               },
             ),
             backgroundColor: Theme.of(context).accentColor.withOpacity(0.80),
