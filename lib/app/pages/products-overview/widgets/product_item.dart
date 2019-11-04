@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './../../models/product.dart';
-import './../../pages/product-detail/product_detail_page.dart';
-import './../../providers/products_provider.dart';
-import './../../providers/cart_provider.dart';
+import './../../../models/product.dart';
+import './../../../pages/product-detail/product_detail_page.dart';
+import './../../../providers/products_provider.dart';
+import './../../../providers/cart_provider.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
