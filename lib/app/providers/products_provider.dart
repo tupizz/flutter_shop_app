@@ -36,6 +36,38 @@ class ProductsProvider with ChangeNotifier {
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
+    Product(
+      id: 'p5',
+      title: 'Tênis nike',
+      description: 'Prepare any meal you want.',
+      price: 9.99,
+      imageUrl:
+          'https://imgcentauro-a.akamaihd.net/900x900/91501831/tenis-nike-revolution-4-masculino-img.jpg',
+    ),
+    Product(
+      id: 'p6',
+      title: 'Oculos Lema2',
+      description: 'Lindo óculos para estudos',
+      price: 49.99,
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnQ7pBcrarFPuz0N6TvhZhTbqE_CJifM0vlJd1IP0DIHmuMUot',
+    ),
+    Product(
+      id: 'p7',
+      title: 'Macbook air',
+      description: 'Um lindo e potente computador.',
+      price: 599.99,
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXoY4GTvWY9yDB23PHsY4eoOfy7NrU6A3_V5BllW4BBjjLeSxp',
+    ),
+    Product(
+      id: 'p8',
+      title: 'Tênis Nike',
+      description: 'Corridas, academia, dia a dia.',
+      price: 89.99,
+      imageUrl:
+          'https://imgcentauro-a.akamaihd.net/900x900/9150186R/tenis-nike-revolution-4-masculino-img.jpg',
+    ),
   ];
 
   // retorno uma cópia dos elementos, não o ponteiro do vetor
