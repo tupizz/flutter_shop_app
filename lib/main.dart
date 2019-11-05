@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 import './app/pages/cart/cart_page.dart';
 import './app/providers/cart_provider.dart';
+import './app/pages/orders/orders_page.dart';
 import './app/shared/utils/color_utils.dart';
+import './app/providers/orders_provider.dart';
 import './app/providers/products_provider.dart';
 import './app/pages/product-detail/product_detail_page.dart';
 import './app/pages/products-overview/products_overview_page.dart';
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: CartProvider(),
         ),
+        ChangeNotifierProvider.value(
+          value: OrdersProvider(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -35,6 +40,7 @@ class MyApp extends StatelessWidget {
           '/': (ctx) => ProductsOverviewPage(),
           ProductDetailPage.routeName: (ctx) => ProductDetailPage(),
           CartPage.routeName: (ctx) => CartPage(),
+          OrdersPage.routeName: (ctx) => OrdersPage(),
         },
       ),
     );

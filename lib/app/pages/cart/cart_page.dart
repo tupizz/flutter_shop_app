@@ -3,6 +3,7 @@ import 'package:flutter_shop_app/app/pages/cart/widgets/cart_item.dart';
 import 'package:provider/provider.dart';
 
 import './../../providers/cart_provider.dart';
+import './../../providers/orders_provider.dart';
 
 class CartPage extends StatelessWidget {
   static String routeName = '/cart';
@@ -62,10 +63,24 @@ class CartPage extends StatelessWidget {
               ),
               backgroundColor: Theme.of(context).accentColor,
             ),
-            FlatButton(
-              child: Text('Order now'),
-              onPressed: () {},
-              textColor: Theme.of(context).primaryColor,
+            Consumer<CartProvider>(
+              builder: (ctx, cartProvider, child) => FlatButton(
+                child: Text('Order now'),
+                onPressed: () {
+                  var orderProvider = Provider.of<OrdersProvider>(
+                    context,
+                    listen: false,
+                  );
+
+                  orderProvider.addOrder(
+                    cartProvider.items.values.toList(),
+                    cartProvider.totalAmount,
+                  );
+
+                  cartProvider.clearCart();
+                },
+                textColor: Theme.of(context).primaryColor,
+              ),
             )
           ],
         ),
